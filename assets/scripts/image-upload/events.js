@@ -11,7 +11,6 @@ const onCreateUpload = function (event) {
 
   $('.display').html('<img class="img-fluid" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif">')
   const data = new FormData(event.target)
-  console.log(...data)
   api.upload(data)
     .then(ui.onUploadSuccess)
     .catch(console.error)
