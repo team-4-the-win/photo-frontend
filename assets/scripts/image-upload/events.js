@@ -1,14 +1,13 @@
 'use strict'
 
 // EVENT HANDLER
-
+const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
 // CREATE AN UPLOAD
 const onCreateUpload = function (event) {
   event.preventDefault()
-
   $('.display').html('<img class="img-fluid" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif">')
   const data = new FormData(event.target)
   api.upload(data)
@@ -27,7 +26,8 @@ const onGetUploads = function (event) {
 // UDPATE THE FILE (PATCH)
 const onUpdateUpload = function (event) {
   event.preventDefault()
-  api.updateUpload()
+  const data = getFormFields(event.target)
+  api.updateUpload(data)
     .then(ui.onUpdateUploadSuccess)
     .catch(console.error)
 }
@@ -35,6 +35,7 @@ const onUpdateUpload = function (event) {
 
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
+  $('#get-files-button').on('click', onGetUploads)
   $('#edit-files-form').on('submit', onUpdateUpload)
 }
 
