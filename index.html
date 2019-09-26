@@ -26,13 +26,16 @@
             </form>
           </div>
           <div class="col-3 sign-up-div">
-            <input class="form-control" type="text" name="credentials[email]" placeholder="user name">
-            <br>
-            <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
-            <br>
-            <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
-            <br>
-            <button type="button" id="sign-up-button" class="btn btn-secondary">sign up</button>
+            <form id="sign-up-form">
+              <input class="form-control" type="text" name="credentials[email]" placeholder="user name">
+              <br>
+              <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
+              <br>
+              <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
+              <br>
+              <button type="button" id="sign-up-button" class="btn btn-secondary">sign up</button>
+            </form>
+            <div id="sign-up-message"></div>
           </div>
           <div class="col-3 reset-pw-div">
             <form id="reset-pw-form">
@@ -44,7 +47,8 @@
             </form>
           </div>
           <div class="col-3 sign-out-div">
-            <button type="button" id="sign-out-button" class="btn btn-secondary">sign out</button>
+              <button type="button" id="sign-out-button" class="btn btn-secondary">sign out</button>
+            <div id="sign-out-message"></div>
           </div>
         </div>
 
