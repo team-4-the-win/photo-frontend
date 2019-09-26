@@ -25,9 +25,11 @@ const getUploads = function () {
 }
 
 // UPDATE AN IMAGE 'PATCH'
-const updateUpload = function (data, id) {
+const updateUpload = function (data) {
+  console.log('id', store.file._id)
+  console.log('token', store.user.token)
   return $.ajax({
-    url: `${config.apiUrl}/fileUploads` + id,
+    url: `${config.apiUrl}/fileUploads/` + store.file._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
