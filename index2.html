@@ -12,35 +12,46 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
+      <!-- navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Photos</a>
+        <a class="navbar-brand" href="#">photos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">my pictures</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="#">browse all pictures</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
+                options
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">upload</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#passwordModal" href="#">change password</a>
+                <hr>
+                <a class="dropdown-item" id="sign-out-button" href="#">sign out</a>
               </div>
             </li>
           </ul>
         </div>
       </nav>
+
+      <!-- reset password modal -->
+      <div class="col-3 reset-pw-div">
+        <form id="reset-pw-form">
+          <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
+          <br>
+          <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
+          <button type="submit" id="change-password-button" class="btn btn-secondary">change password</button>
+          <div id="reset-pw-message"></div>
+        </form>
+      </div>
 
       <div class="container">
         <h1>pictures</h1>
@@ -51,7 +62,7 @@
               <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
               <br>
               <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
-              <button type="button" id="sign-in-button" class="btn btn-secondary">sign in</button>
+              <button type="sumbit" id="sign-in-button" class="btn btn-secondary">sign in</button>
               <div id="sign-in-message"></div>
             </form>
           </div>
@@ -63,7 +74,7 @@
               <br>
               <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
               <br>
-              <button type="button" id="sign-up-button" class="btn btn-secondary">sign up</button>
+              <button type="submit" id="sign-up-button" class="btn btn-secondary">sign up</button>
             </form>
             <div id="sign-up-message"></div>
           </div>
@@ -72,12 +83,12 @@
               <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
               <br>
               <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
-              <button type="button" id="change-password-button" class="btn btn-secondary">change password</button>
+              <button type="submit" id="change-password-button" class="btn btn-secondary">change password</button>
               <div id="reset-pw-message"></div>
             </form>
           </div>
           <div class="col-3 sign-out-div">
-            <button type="button" id="sign-out-button" class="btn btn-secondary">sign out</button>
+            <button type="submit" id="sign-out-button" class="btn btn-secondary">sign out</button>
             <div id="sign-out-message"></div>
           </div>
         </div>
@@ -85,7 +96,7 @@
         <br><h4>file events</h4>
         <div class="row border">
           <div class="col-3 get-files-div">
-            <button type="button" id="get-files-button" class="btn btn-secondary">get files</button>
+            <button type="submit" id="get-files-button" class="btn btn-secondary">get files</button>
           </div>
           <div class="col-3 create-files-div">
             <form id="create-files-form">
@@ -94,7 +105,7 @@
               <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
               <br>
               <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
-            <button type="button" id="create-files-button" class="btn btn-secondary">create file</button>
+            <button type="submit" id="create-files-button" class="btn btn-secondary">create file</button>
             </form>
             <div id="create-files-message"></div>
           </div>
@@ -105,14 +116,14 @@
             <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
             <br>
             <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
-            <button type="button" id="edit-files-button" class="btn btn-secondary">edit file</button>
+            <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
             </form>
             <div id="edit-files-message"></div>
           </div>
           <div class="col-3 delete-files-div">
             <form id="delete-files-form">
             <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
-            <button type="button" id="delete-files-button" class="btn btn-secondary">delete file</button>
+            <button type="submit" id="delete-files-button" class="btn btn-secondary">delete file</button>
             </form>
             <div id="delete-files-message"></div>
           </div>
