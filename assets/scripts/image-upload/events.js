@@ -25,10 +25,18 @@ const onGetUploads = function (event) {
     .catch(console.error)
 }
 
+// UDPATE THE FILE (PATCH)
+const onUpdateUpload = function (event) {
+  event.preventDefault()
+  api.updateUpload()
+    .then(ui.onUpdateUploadSuccess)
+    .catch(console.error)
+}
 // LISTEN FOR EVENTS
 
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
+  $('#edit-files-form').on('submit', onUpdateUpload)
 }
 
 module.exports = {
