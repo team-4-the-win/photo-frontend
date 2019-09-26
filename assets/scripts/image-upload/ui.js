@@ -2,13 +2,14 @@
 
 // UPON SUCCESSFUL IMAGE UPLOAD
 const onUploadSuccess = function (data) {
-  $('.display').html('<img class="img-fluid" src="' + data.fileUpload.url + '">')
+  $('.display').html('<img src="' + data.fileUpload.url + '">')
   $('#create-files-message').text('File has successfully uploaded')
 }
 
 // UPON SUCCESSFUL GET IMAGES
 const onGetUploadsSuccess = function () {
-  $('.get-files').text('Take a look around!')
+  console.log('do you work?')
+  $('#get-files-message').text('Take a look around!')
 }
 
 // ON SUCCESSFUL DELETION OF A FILE

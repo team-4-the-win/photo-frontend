@@ -25,6 +25,14 @@ const onGetUploads = function (event) {
     .catch(console.error)
 }
 
+// UDPATE THE FILE (PATCH)
+const onUpdateUpload = function (event) {
+  event.preventDefault()
+  api.updateUpload()
+    .then(ui.onUpdateUploadSuccess)
+    .catch(console.error)
+}
+
 // DELETE A FILE
 const onDeleteFile = function (event) {
   event.preventDefault()
@@ -36,13 +44,15 @@ const onDeleteFile = function (event) {
 // LISTEN FOR EVENTS
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
-  $('#get-files-button').on('submit', onGetUploads)
+  $('#edit-files-form').on('submit', onUpdateUpload)
+  $('#get-files-button').on('click', onGetUploads)
   $('#delete-files-button').on('submit', onDeleteFile)
 }
 
 module.exports = {
   onCreateUpload,
   onGetUploads,
+  onUpdateUpload,
   onDeleteFile,
   addHandlers
 }
