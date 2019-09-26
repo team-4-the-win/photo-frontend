@@ -2,7 +2,7 @@
 
 // UPON SUCCESSFUL IMAGE UPLOAD
 const onUploadSuccess = function (data) {
-  $('.display').html('<img src="' + data.fileUpload.url + '">')
+  $('.display').html('<img class="img-fluid" src="' + data.fileUpload.url + '">')
   $('#create-files-message').text('File has successfully uploaded')
 }
 

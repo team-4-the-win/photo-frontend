@@ -9,7 +9,7 @@ const ui = require('./ui')
 const onCreateUpload = function (event) {
   event.preventDefault()
 
-  $('.display').html('<img src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif">')
+  $('.display').html('<img class="img-fluid" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif">')
   const data = new FormData(event.target)
   console.log(...data)
   api.upload(data)

@@ -82,6 +82,7 @@
             </div>
             <div class="modal-body">
               <div class="create-files-div">
+                <div class="display"></div>
                 <form id="create-files-form">
                   <input class="form-control" type="file" name="upload" placeholder="your file" autocomplete="off">
                   <br>
@@ -104,9 +105,9 @@
         <div class="row border">
           <div class="col-3 sign-in-div">
             <form id="sign-in-form">
-              <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
+              <input class="form-control" type="password" name="credentials[email]" placeholder="email" autocomplete="off">
               <br>
-              <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
+              <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
               <button type="sumbit" id="sign-in-button" class="btn btn-secondary">sign in</button>
               <div id="sign-in-message"></div>
             </form>
