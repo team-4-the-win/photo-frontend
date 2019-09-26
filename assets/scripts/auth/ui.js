@@ -1,6 +1,7 @@
 'use strict'
 
 const signUpSuccess = function () {
+<<<<<<< HEAD
   $('#sign-up-message').text('Signed up successfully')
 }
 
@@ -34,6 +35,29 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('#sign-out-message').text('Error occured.')
+=======
+}
+
+const signUpFailure = function () {
+}
+
+const signInSuccess = function (data) {
+}
+
+const signInFailure = function () {
+}
+
+const changePasswordSuccess = function (data) {
+}
+
+const changePasswordFailure = function (data) {
+}
+
+const signOutSuccess = function () {
+}
+
+const signOutFailure = function () {
+>>>>>>> Add auth folder
 }
 
 module.exports = {
