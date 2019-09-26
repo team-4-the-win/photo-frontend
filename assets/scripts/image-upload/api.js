@@ -25,10 +25,20 @@ const getUploads = function () {
 }
 
 // UPDATE AN IMAGE 'PATCH'
-
+const updateUpload = function (data, id) {
+  return $.ajax({
+    url: `${config.apiUrl}/fileUploads` + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 // DELETE AN IMAGE 'DELETE'
 
 module.exports = {
   upload,
-  getUploads
+  getUploads,
+  updateUpload
 }

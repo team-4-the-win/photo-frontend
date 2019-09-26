@@ -11,7 +11,6 @@ const onCreateUpload = function (event) {
 
   $('.display').html('<img class="img-fluid" src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif">')
   const data = new FormData(event.target)
-  console.log(...data)
   api.upload(data)
     .then(ui.onUploadSuccess)
     .catch(console.error)
@@ -25,10 +24,18 @@ const onGetUploads = function (event) {
     .catch(console.error)
 }
 
+// UDPATE THE FILE (PATCH)
+const onUpdateUpload = function (event) {
+  event.preventDefault()
+  api.updateUpload()
+    .then(ui.onUpdateUploadSuccess)
+    .catch(console.error)
+}
 // LISTEN FOR EVENTS
 
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
+  $('#edit-files-form').on('submit', onUpdateUpload)
 }
 
 module.exports = {
