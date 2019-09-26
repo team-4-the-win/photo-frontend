@@ -5,6 +5,7 @@
 const api = require('./api')
 const ui = require('./ui')
 
+// CREATE AN UPLOAD
 const onCreateUpload = function (event) {
   event.preventDefault()
 
@@ -16,13 +17,22 @@ const onCreateUpload = function (event) {
     .catch(console.error)
 }
 
+// SEE ALL FILES (GET)
+const onGetUploads = function (event) {
+  event.preventDefault()
+  api.getUploads()
+    .then(ui.onGetUploadsSuccess)
+    .catch(console.error)
+}
+
 // LISTEN FOR EVENTS
 
 const addHandlers = function () {
-  $('form').on('submit', onCreateUpload)
+  $('#create-files-form').on('submit', onCreateUpload)
 }
 
 module.exports = {
   onCreateUpload,
+  onGetUploads,
   addHandlers
 }

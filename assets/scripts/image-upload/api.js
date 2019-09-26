@@ -4,24 +4,31 @@ const config = require('../config')
 const store = require('../store')
 
 // UPLOAD AN IMAGE
-const upload = function (formData) { // CHECK IN ON THIS
+const upload = function (formData) {
   return $.ajax({
     url: `${config.apiUrl}/fileUploads`,
     method: 'POST',
     headers: {Authorization: 'Token token=' + store.user.token
     },
-    data: formData, // CHECK IN ON THIS
+    data: formData,
     contentType: false,
     processData: false
   })
 }
 
-// UPDATE AN IMAGE 'PATCH'
-
 // SEE ALL IMAGES 'INDEX'
+const getUploads = function () {
+  return $.ajax({
+    url: `${config.apiUrl}/fileUploads`,
+    method: 'GET'
+  })
+}
+
+// UPDATE AN IMAGE 'PATCH'
 
 // DELETE AN IMAGE 'DELETE'
 
 module.exports = {
-  upload
+  upload,
+  getUploads
 }
