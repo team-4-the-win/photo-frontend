@@ -47,7 +47,7 @@ const updateUpload = function (data) {
 const deleteFile = function (data) {
   console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/fileUploads/' + data._id,
+    url: config.apiUrl + '/fileUploads/' + store.file._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
