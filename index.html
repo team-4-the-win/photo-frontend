@@ -21,7 +21,7 @@
               <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
               <br>
               <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
-              <button type="button" id="sign-in-button" class="btn btn-secondary">sign in</button>
+              <button type="submit" id="sign-in-button" class="btn btn-secondary">sign in</button>
               <div id="sign-in-message"></div>
             </form>
           </div>
@@ -33,7 +33,7 @@
               <br>
               <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
               <br>
-              <button type="button" id="sign-up-button" class="btn btn-secondary">sign up</button>
+              <button type="submit" id="sign-up-button" class="btn btn-secondary">sign up</button>
             </form>
             <div id="sign-up-message"></div>
           </div>
@@ -42,12 +42,12 @@
               <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
               <br>
               <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
-              <button type="button" id="change-password-button" class="btn btn-secondary">change password</button>
+              <button type="submit" id="change-password-button" class="btn btn-secondary">change password</button>
               <div id="reset-pw-message"></div>
             </form>
           </div>
           <div class="col-3 sign-out-div">
-              <button type="button" id="sign-out-button" class="btn btn-secondary">sign out</button>
+              <button type="submit" id="sign-out-button" class="btn btn-secondary">sign out</button>
             <div id="sign-out-message"></div>
           </div>
         </div>
@@ -55,7 +55,7 @@
         <br><h4>file events</h4>
         <div class="row border">
           <div class="col-3 get-files-div">
-            <button type="button" id="get-files-button" class="btn btn-secondary">get files</button>
+            <button type="submit" id="get-files-button" class="btn btn-secondary">get files</button>
           </div>
           <div class="col-3 create-files-div">
             <form id="create-files-form">
@@ -64,7 +64,7 @@
               <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
               <br>
               <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
-            <button type="button" id="create-files-button" class="btn btn-secondary">create file</button>
+            <button type="submit" id="create-files-button" class="btn btn-secondary">create file</button>
             </form>
             <div id="create-files-message"></div>
           </div>
@@ -75,14 +75,14 @@
             <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
             <br>
             <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
-            <button type="button" id="edit-files-button" class="btn btn-secondary">edit file</button>
+            <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
             </form>
             <div id="edit-files-message"></div>
           </div>
           <div class="col-3 delete-files-div">
             <form id="delete-files-form">
             <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
-            <button type="button" id="delete-files-button" class="btn btn-secondary">delete file</button>
+            <button type="submit" id="delete-files-button" class="btn btn-secondary">delete file</button>
             </form>
             <div id="delete-files-message"></div>
           </div>
