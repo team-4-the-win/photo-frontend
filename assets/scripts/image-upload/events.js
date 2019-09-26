@@ -31,16 +31,29 @@ const onUpdateUpload = function (event) {
     .then(ui.onUpdateUploadSuccess)
     .catch(console.error)
 }
-// LISTEN FOR EVENTS
 
+// DELETE A FILE
+const onDeleteFile = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+
+  api.deleteFile(data)
+    .then(ui.onDeleteFileSuccess)
+    .catch(console.error)
+}
+
+// LISTEN FOR EVENTS
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
   $('#get-files-button').on('click', onGetUploads)
   $('#edit-files-form').on('submit', onUpdateUpload)
+  $('#delete-files-button').on('click', onDeleteFile)
 }
 
 module.exports = {
   onCreateUpload,
   onGetUploads,
+  onDeleteFile,
   addHandlers
 }
