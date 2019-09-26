@@ -36,6 +36,7 @@ const onDeleteFile = function (event) {
 // LISTEN FOR EVENTS
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
+  $('#get-files-button').on('submit', onGetUploads)
   $('#delete-files-button').on('submit', onDeleteFile)
 }
 
