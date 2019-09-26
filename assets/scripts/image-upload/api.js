@@ -5,6 +5,7 @@ const store = require('../store')
 
 // UPLOAD AN IMAGE
 const upload = function (formData) {
+  console.log(store.user)
   return $.ajax({
     url: `${config.apiUrl}/fileUploads`,
     method: 'POST',
@@ -27,8 +28,18 @@ const getUploads = function () {
 // UPDATE AN IMAGE 'PATCH'
 
 // DELETE AN IMAGE 'DELETE'
+const deleteFile = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/fileUploads' + data.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   upload,
-  getUploads
+  getUploads,
+  deleteFile
 }

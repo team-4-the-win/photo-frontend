@@ -11,7 +11,12 @@ const onGetUploadsSuccess = function () {
   $('.get-files').text('Take a look around!')
 }
 
+// ON SUCCESSFUL DELETION OF A FILE
+const onDeleteFileSuccess = function () {
+  $('delete-files-message').text('File has been deleted')
+}
 module.exports = {
   onUploadSuccess,
-  onGetUploadsSuccess
+  onGetUploadsSuccess,
+  onDeleteFileSuccess
 }

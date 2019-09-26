@@ -25,14 +25,23 @@ const onGetUploads = function (event) {
     .catch(console.error)
 }
 
-// LISTEN FOR EVENTS
+// DELETE A FILE
+const onDeleteFile = function (event) {
+  event.preventDefault()
+  api.deleteFile()
+    .then(ui.onDeleteFileSuccess)
+    .catch(console.error)
+}
 
+// LISTEN FOR EVENTS
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
+  $('#delete-files-button').on('submit', onDeleteFile)
 }
 
 module.exports = {
   onCreateUpload,
   onGetUploads,
+  onDeleteFile,
   addHandlers
 }
