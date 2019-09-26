@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showImagesTemplate = require('../templates/imageUpload-listing.handlebars')
 
 // UPON SUCCESSFUL IMAGE UPLOAD
 const onUploadSuccess = function (data) {
@@ -11,8 +12,12 @@ const onUploadSuccess = function (data) {
 }
 
 // UPON SUCCESSFUL GET IMAGES
-const onGetUploadsSuccess = function () {
+const onGetUploadsSuccess = function (data) { // added data as a parameter
+  console.log(data)
   $('#get-files-message').text('Take a look around!')
+  // new shit under here
+  const showImagesHtml = showImagesTemplate({ images: data.fileUploads })
+  $('.get-files').html(showImagesHtml)
 }
 
 module.exports = {
