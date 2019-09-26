@@ -13,7 +13,9 @@
     </head>
     <body>
 
+      <!-- signed in-->
       <!-- navbar -->
+      <div class="signed-in-options">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">photos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +31,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                options
+
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" data-toggle="modal" data-target="#uploadModal" href="#">upload</a>
@@ -41,6 +43,7 @@
           </ul>
         </div>
       </nav>
+    </div>
 
       <!-- reset password modal -->
       <div class="modal" id="passwordModal" tabindex="-1" role="dialog">
@@ -69,6 +72,36 @@
           </div>
         </div>
       </div>
+
+      <!-- signed out-->
+      <div class="container">
+        <div class="signed-out-options">
+          <h4>sign in/up</h4>
+            <div class="card sign-in-div">
+              <form id="sign-in-form">
+                <input class="form-control" type="password" name="credentials[email]" placeholder="email" autocomplete="off">
+                <br>
+                <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
+                <button type="sumbit" id="sign-in-button" class="btn btn-secondary">sign in</button>
+                <div id="sign-in-message"></div>
+              </form>
+              <a href="#">need an account?<br>sign up</a>
+              <div id="sign-up-div"></div>
+            </div>
+          </div>
+        </div>
+          <!-- <div class="sign-up-div">
+            <form id="sign-up-form">
+              <input class="form-control" type="text" name="credentials[email]" placeholder="user name">
+              <br>
+              <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
+              <br>
+              <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
+              <br>
+              <button type="submit" id="sign-up-button" class="btn btn-secondary">sign up</button>
+            </form>
+            <div id="sign-up-message"></div>
+          </div> -->
 
       <!-- upload image modal -->
       <div class="modal" id="uploadModal" tabindex="-1" role="dialog">
@@ -100,7 +133,7 @@
       </div>
 
 
-      <div class="container">
+      <!-- <div class="container">
         <h4>auth events</h4>
         <div class="row border">
           <div class="col-3 sign-in-div">
@@ -123,7 +156,7 @@
               <button type="submit" id="sign-up-button" class="btn btn-secondary">sign up</button>
             </form>
             <div id="sign-up-message"></div>
-          </div>
+          </div> -->
           <!-- <div class="col-3 reset-pw-div">
             <form id="reset-pw-form">
               <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
@@ -137,13 +170,14 @@
             <button type="submit" id="sign-out-button" class="btn btn-secondary">sign out</button>
             <div id="sign-out-message"></div>
           </div> -->
-        </div>
-
+        <!-- </div> -->
+        <div class="signed-in-options">
         <br><h4>file events</h4>
         <div class="row border">
           <div class="col-3 get-files-div">
             <button type="submit" id="get-files-button" class="btn btn-secondary">get files</button>
           </div>
+        </div>
           <!-- <div class="col-3 create-files-div">
             <form id="create-files-form">
               <input class="form-control" type="file" name="file[file]" placeholder="old password" autocomplete="off">
@@ -155,7 +189,8 @@
             </form>
             <div id="create-files-message"></div>
           </div> -->
-          <div class="col-3 edit-files-div">
+
+          <div class="edit-files-div">
             <form id="edit-files-form">
             <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
             <br>
@@ -166,6 +201,9 @@
             </form>
             <div id="edit-files-message"></div>
           </div>
+
+
+
           <div class="col-3 delete-files-div">
             <form id="delete-files-form">
             <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
