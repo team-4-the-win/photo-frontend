@@ -1,0 +1,17 @@
+{{#each images as |image|}}
+  <section data-id="{{image.id}}" style="margin: 10px;">
+    <p>
+      {{#if image.url}}
+        <img src = "{{image.url}}"img/>
+      {{else}}
+        {{image.name}}
+      {{/if}}
+    </p>
+    <div class="image-listing-button text-center">
+      <button class="btn btn-danger delete-button" data-id="{{image.id}}">Delete</button>
+      <button class="btn btn-warning update-button" data-toggle="modal" data-target="#updateImageModal" data-id="{{image.id}}">Update</button>
+    </div>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
