@@ -1,8 +1,7 @@
 'use strict'
 
 const store = require('../store')
-
-$('.signed-in-options').hide()
+const imageEvents = require('../image-upload/events')
 
 const signUpSuccess = function () {
   $('#sign-up-message').text('Signed up successfully')
@@ -16,13 +15,13 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   $('#sign-in-message').text('Signed in successfully')
-  // $('#sign-in-div').hide()
-  // $('#sign-up-div').hide()
-  $('.signed-in-options').show()
+  $('#sign-in-div').hide()
+  $('#sign-up-div').hide()
   $('.signed-out-options').hide()
+  $('.signed-in-options').show()
   store.user = data.user
-  $('#navbarDropdownMenuLink').text(store.user.email)
   $('form').trigger('reset')
+  imageEvents.onGetUploads()
 }
 
 const signInFailure = function () {
@@ -43,19 +42,15 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   $('#sign-out-message').text('Signed out successfully')
   $('form').trigger('reset')
-  // $('#sign-in-div').show()
-  // $('#sign-up-div').show()
   $('.signed-in-options').hide()
   $('.signed-out-options').show()
+  $('#sign-in-div').show()
+  $('#sign-up-div').show()
 }
 
 const signOutFailure = function () {
   $('#sign-out-message').text('Error occured.')
   $('form').trigger('reset')
-}
-
-const showSignUp = function () {
-  $('#')
 }
 
 module.exports = {
