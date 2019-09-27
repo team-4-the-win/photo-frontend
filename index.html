@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>photomania</title>
+      <title>photonix</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
       <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
@@ -29,17 +31,17 @@
       <!-- signed in-->
       <!-- navbar -->
       <div class="signed-in-options">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">photos</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand navbar-custom navbar-text" href="#">photonix</a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> -->
           <!-- <span class="navbar-toggler-icon"></span> -->
         </button>
         <ul class="ml-auto navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">my pictures</a>
+              <a class="nav-link" href="#" id="my-pictures">my pictures</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">browse all pictures</a>
+              <a class="nav-link" href="#" id="browse-pictures">browse gallery</a>
             </li>
             <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <li class="nav-item dropdown"> -->
@@ -90,32 +92,20 @@
         <div class="signed-out-options">
             <div class="card sign-in-div">
               <form id="sign-in-form">
-                <h4>sign in/up</h4>
-                <input class="form-control" type="password" name="credentials[email]" placeholder="email" autocomplete="off">
+                <h1>photonix</h1>
+                <input class="form-control" type="text" name="credentials[email]" placeholder="user name" autocomplete="off">
                 <br>
                 <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
                 <button type="sumbit" id="sign-in-button" class="btn btn-secondary">sign in</button>
+                <!-- <button type="button" data-toggle="modal" data-target="#createAccountModal" class="btn btn-secondary">sign up</button> -->
                 <div id="sign-in-message"></div>
+                <button type="button" data-toggle="modal" data-target="#createAccountModal" class="btn btn-outline-secondary">sign up</button>
               </form>
-              <button type="button" id="sign-up-button" class="btn btn-secondary">sign up</button>
-              <div id="sign-up-message"></div>
-              <!-- <a data-toggle="modal" data-target="#createAccountModal" href="#">need an account?<br>sign up</a> -->
-              <div id="sign-up-div"></div>
+              <!-- <div id="sign-up-message"></div> -->
+              <!-- <div id="sign-up-div"></div> -->
             </div>
           </div>
         </div>
-          <!-- <div class="sign-up-div">
-            <form id="sign-up-form">
-              <input class="form-control" type="text" name="credentials[email]" placeholder="user name">
-              <br>
-              <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
-              <br>
-              <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
-              <br>
-              <button type="submit" id="sign-up-button" class="btn btn-secondary">sign up</button>
-            </form>
-            <div id="sign-up-message"></div>
-          </div> -->
 
           <!-- create account modal -->
           <div class="modal" id="createAccountModal" tabindex="-1" role="dialog">
@@ -177,89 +167,10 @@
         </div>
       </div>
 
-
-      <!-- <div class="container">
-        <h4>auth events</h4>
-        <div class="row border">
-          <div class="col-3 sign-in-div">
-            <form id="sign-in-form">
-              <input class="form-control" type="password" name="credentials[email]" placeholder="email" autocomplete="off">
-              <br>
-              <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
-              <button type="sumbit" id="sign-in-button" class="btn btn-secondary">sign in</button>
-              <div id="sign-in-message"></div>
-            </form>
-          </div>
-          <div class="col-3 sign-up-div">
-            <form id="sign-up-form">
-              <input class="form-control" type="text" name="credentials[email]" placeholder="user name">
-              <br>
-              <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
-              <br>
-              <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="confirm password" autocomplete="on">
-              <br>
-              <button type="submit" id="sign-up-button" class="btn btn-secondary">sign up</button>
-            </form>
-            <div id="sign-up-message"></div>
-          </div> -->
-          <!-- <div class="col-3 reset-pw-div">
-            <form id="reset-pw-form">
-              <input class="form-control" type="password" name="passwords[old]" placeholder="old password" autocomplete="off">
-              <br>
-              <input class="form-control" type="password" name="passwords[new]" placeholder="new password" autocomplete="off">
-              <button type="submit" id="change-password-button" class="btn btn-secondary">change password</button>
-              <div id="reset-pw-message"></div>
-            </form>
-          </div> -->
-          <!-- <div class="col-3 sign-out-div">
-            <button type="submit" id="sign-out-button" class="btn btn-secondary">sign out</button>
-            <div id="sign-out-message"></div>
-          </div> -->
-        <!-- </div> -->
-        <div class="signed-in-options">
-        <!-- <br><h4>file events</h4>
-        <div class="row border">
-          <div class="col-3 get-files-div">
-            <button type="submit" id="get-files-button" class="btn btn-secondary">get files</button>
-          </div>
-        </div> -->
-          <!-- <div class="col-3 create-files-div">
-            <form id="create-files-form">
-              <input class="form-control" type="file" name="file[file]" placeholder="old password" autocomplete="off">
-              <br>
-              <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
-              <br>
-              <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
-            <button type="submit" id="create-files-button" class="btn btn-secondary">create file</button>
-            </form>
-            <div id="create-files-message"></div>
-          </div> -->
-
-          <!-- <div class="edit-files-div">
-            <form id="edit-files-form">
-            <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
-            <br>
-            <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
-            <br>
-            <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
-            <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
-            </form>
-            <div id="edit-files-message"></div>
-          </div>
-
-
-
-          <div class="col-3 delete-files-div">
-            <form id="delete-files-form">
-            <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
-            <button type="submit" id="delete-files-button" class="btn btn-secondary">delete file</button>
-            </form>
-            <div id="delete-files-message"></div>
-          </div>
-        </div> -->
+      <div class="signed-in-options">
 
         <!-- update image modal -->
-        <div class="modal" id="updateImageModal" tabindex="-1" role="dialog">
+        <div class="modal update" id="updateImageModal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -290,7 +201,7 @@
           </div>
         </div>
 
-        <div class="modal" id="photo" tabindex="-1" role="dialog">
+        <!-- <div class="modal" id="photo" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -301,7 +212,6 @@
             </div>
             <div class="modal-body">
               <div class="image-listing-button text-center">
-                <img src="image.url" alt="">
                 <button class="btn btn-warning update-button" data-toggle="modal" data-target="#updateImageModal" data-id="image._id">Update</button>
                 <button id="delete-files-button" class="btn btn-danger delete-button" data-id="image._id">Delete</button>
               </div>
@@ -311,9 +221,33 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
-        <div class="get-files row" id="get-files-here">
+      <!-- photo Modal -->
+      <div class="modal photo" id="photo" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">here is the photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="image-listing-button text-center">
+              <img id="modal-image">
+              <button id="update-file-button" class="btn btn-warning update-button" data-toggle="modal" data-target="#updateImageModal">Update</button>
+              <button id="delete-files-button" class="btn btn-danger delete-button" data-id="" >Delete</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="get-files row no-gutters" id="get-files-here">
         </div>
       </div>
     </body>

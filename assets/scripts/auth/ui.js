@@ -45,6 +45,7 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   $('#sign-out-message').text('Signed out successfully')
+  $('#sign-in-message').text('')
   $('form').trigger('reset')
   $('.signed-in-options').hide()
   $('.signed-out-options').show()

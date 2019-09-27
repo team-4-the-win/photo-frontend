@@ -1,11 +1,60 @@
+$theme-colors: (
+  'dark': #191b1c,
+  'secondary': #b0cc27
+  // 'warning': #fadd5c,
+  // 'light': #fff,
+);
+
 @import '~bootstrap/scss/bootstrap';
+
+$green: #b0cc27;
+
+img {
+  max-height: 400px;
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
+  background-color: #222629;
 }
 
 div {
   text-align: center;
+}
+
+h1 {
+  color: $green;
+  text-shadow:
+     2px 2px 4px #222629;
+}
+
+$zindex-popover: 1060 !default;
+
+.update {
+  z-index: $zindex-popover;
+}
+
+.col-sm-4 {
+  // max-height: 30em;
+}
+
+// <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+//   <a class="navbar-brand" href="#">photonix</a>
+
+// .navbar-brand a {
+//   color: $green;
+// }
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-text {
+    color: $green;
+}
+
+.sign-in-div {
+  position: fixed;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .container {
@@ -14,6 +63,12 @@ div {
 
 .btn {
   margin: .5em;
+  box-shadow: 2px 2px 4px #222629;
+}
+
+.btn:hover {
+  margin: .5em;
+  // box-shadow: 2px 2px 4px #222629;
 }
 
 .border {
@@ -39,7 +94,7 @@ div {
 }
 
 .thumbnail {
-  width: 20em;
+  // width: 20em;
 }
 
 .crossfade > figure {
