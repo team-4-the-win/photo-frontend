@@ -5,6 +5,8 @@ $theme-colors: (
   // 'light': #fff,
 );
 
+$zindex-popover: 1060 !default;
+
 @import '~bootstrap/scss/bootstrap';
 
 $green: #b0cc27;
@@ -135,6 +137,11 @@ background-color: black;
   animation-delay: 24s;
   background-image: url('https://i.imgur.com/rPN94xo.jpg');
 }
+
+.update {
+  z-index: $zindex-popover;
+}
+
 
 @keyframes
 imageAnimation {  0% {
