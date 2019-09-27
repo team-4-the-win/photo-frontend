@@ -6,7 +6,7 @@
 
 Photonix is an image hosting website to store users' images.  Users can sign up, log in, change their password, and log out.  Upon signing in, users will see a gallery of their uploaded images.  If an image is clicked, a modal will show and options to edit or delete the photo will be provided. Metadata like date created, date modified, owner, and tags.  Tags and image names are modifiable data. Images are stored on AWS.
 
-Registered users may create, see, update, and delete images.  Unregistered users may see and download images.
+Registered users may create, see, update, and delete their own images.  They also may see and download images that others have uploaded.
 
 
 #### Deployed Frontend App:
@@ -41,7 +41,7 @@ https://blooming-cliffs-96004.herokuapp.com
 
 #### Planning & Process
 
-Once we finished our backend, we were able to start builind our front end.  We started by listing features that were required to reach MVP. Jenny started by creating the `HTML` structure.  Soo worked on `authorization` features, Sarah worked on `image-upload` features, and Dave worked on  `handlebars`.  As we wrapped up our respective tasks, we tag-teamed the image-upload events. The following day, we looked at the reset of the features we needed and divided-and-conquered once more. We spent much of our final project day styling and creating a more intuitive GUI. Communication was a priority as we frequently found ourselves needing to work in the same file at the same time. To solve this issue, we would work in very small bursts and then share code via slack with one group member who would push the changes from one file. 
+Once we finished our backend, we were able to start builind our front end.  We started by listing features that were required to reach MVP. Jenny started by creating the `HTML` structure.  Soo worked on `authorization` features, Sarah worked on `image-upload` features, and Dave worked on  `handlebars`.  As we wrapped up our respective tasks, we tag-teamed the image-upload events. The following day, we looked at the reset of the features we needed and divided-and-conquered once more. We spent much of our final project day styling and creating a more intuitive GUI. Communication was a priority as we frequently found ourselves needing to work in the same file at the same time. To solve this issue, we would work in very small bursts and then share code via slack with one group member who would push the changes from one file.
 
 #### MVP User Stories
 - As an unregistered user, I would like to sign up with email and password.
