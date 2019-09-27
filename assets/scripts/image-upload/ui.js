@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store')
-const events = require('./events')
 const showImagesTemplate = require('../templates/imageUpload-listing.handlebars')
 
 // UPON SUCCESSFUL IMAGE UPLOAD

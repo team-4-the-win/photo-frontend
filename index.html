@@ -170,7 +170,7 @@
       <div class="signed-in-options">
 
         <!-- update image modal -->
-        <div class="modal update" id="updateImageModal" tabindex="-1" role="dialog">
+        <div class="modal update" id="updateImageModal"  role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -195,12 +195,14 @@
                 </div>
               </div>
               <div class="modal-footer">
+                <div id="update-files-message"></div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
               </div>
             </div>
           </div>
         </div>
 
+<<<<<<< HEAD
         <!-- <div class="modal" id="photo" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -222,6 +224,8 @@
           </div>
         </div>
       </div> -->
+=======
+>>>>>>> Fix modals overlay
 
       <!-- photo Modal -->
       <div class="modal photo" id="photo" tabindex="-1" role="dialog">
@@ -235,12 +239,12 @@
           </div>
           <div class="modal-body">
             <div class="image-listing-button text-center">
-              <img id="modal-image">
               <button id="update-file-button" class="btn btn-warning update-button" data-toggle="modal" data-target="#updateImageModal">Update</button>
               <button id="delete-files-button" class="btn btn-danger delete-button" data-id="" >Delete</button>
             </div>
           </div>
           <div class="modal-footer">
+            <div id="delete-files-message"></div>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
           </div>
         </div>
