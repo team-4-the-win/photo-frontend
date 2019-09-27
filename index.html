@@ -30,7 +30,7 @@
       <!-- navbar -->
       <div class="signed-in-options">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">photonix</a>
+        <a class="navbar-brand navbar-custom navbar-text" href="#">photonix</a>
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> -->
           <!-- <span class="navbar-toggler-icon"></span> -->
         </button>
@@ -95,8 +95,9 @@
                 <br>
                 <input class="form-control" type="password" name="credentials[password]" placeholder="password" autocomplete="off">
                 <button type="sumbit" id="sign-in-button" class="btn btn-secondary">sign in</button>
+                <!-- <button type="button" data-toggle="modal" data-target="#createAccountModal" class="btn btn-secondary">sign up</button> -->
                 <div id="sign-in-message"></div>
-                <button type="button" data-toggle="modal" data-target="#createAccountModal" class="btn btn-secondary">sign up</button>
+                <button type="button" data-toggle="modal" data-target="#createAccountModal" class="btn btn-outline-secondary">sign up</button>
               </form>
               <!-- <div id="sign-up-message"></div> -->
               <!-- <div id="sign-up-div"></div> -->
@@ -167,7 +168,7 @@
       <div class="signed-in-options">
 
         <!-- update image modal -->
-        <div class="modal" id="updateImageModal" tabindex="-1" role="dialog">
+        <div class="modal update" id="updateImageModal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -198,7 +199,7 @@
           </div>
         </div>
 
-        <div class="modal" id="photo" tabindex="-1" role="dialog">
+        <!-- <div class="modal" id="photo" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -209,7 +210,6 @@
             </div>
             <div class="modal-body">
               <div class="image-listing-button text-center">
-                <!-- <img src="image.url" alt=""> -->
                 <button class="btn btn-warning update-button" data-toggle="modal" data-target="#updateImageModal" data-id="image._id">Update</button>
                 <button id="delete-files-button" class="btn btn-danger delete-button" data-id="image._id">Delete</button>
               </div>
@@ -219,7 +219,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- photo Modal -->
       <div class="modal photo" id="photo" tabindex="-1" role="dialog">

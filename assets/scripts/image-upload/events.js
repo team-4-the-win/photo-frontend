@@ -38,6 +38,7 @@ const onUpdateUpload = function (event) {
   const id = $(event.target).data('id')
   console.log(id)
   api.updateUpload(data, id)
+    .then(() => onGetUploads(event))
     .then(ui.onUpdateUploadSuccess)
     .catch(console.error)
 }
@@ -48,6 +49,7 @@ const onDeleteFile = function (event) {
   const id = $(event.target).data('id')
   console.log('id', id)
   api.deleteFile(id)
+    .then(() => onGetUploads(event))
     .then(ui.onDeleteFileSuccess)
     .catch(console.error)
 }
