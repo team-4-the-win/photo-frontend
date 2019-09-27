@@ -1,11 +1,30 @@
+$theme-colors: (
+  'dark': #191b1c,
+  // 'warning': #fadd5c,
+  // 'light': #fff,
+);
+
 @import '~bootstrap/scss/bootstrap';
 
 body {
   font-family: 'DM Sans', sans-serif;
+  background-color: #222629;
 }
 
 div {
   text-align: center;
+}
+
+h1 {
+  text-shadow:
+     2px 2px 4px #222629;
+}
+
+.sign-in-div {
+  position: fixed;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .container {
@@ -39,7 +58,7 @@ div {
 }
 
 .thumbnail {
-  width: 20em;
+  // width: 20em;
 }
 
 .crossfade > figure {

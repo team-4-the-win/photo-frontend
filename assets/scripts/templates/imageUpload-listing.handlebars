@@ -1,11 +1,25 @@
-{{#each images as |image|}}
+<!-- {{#each images as |image|}}
+<div class="col-sm-4">
   <section data-id="{{image._id}}" style="margin: 10px;">
       {{#if image.url}}
-          <img data-toggle="tooltip" data-placement="top" title="created on {{image.createdAt}} updated on {{image.updatedAt}}" class="hover img-thumbnail thumbnail img-fluid" src="{{image.url}}"img/>
+          <img data-toggle="tooltip" data-placement="top" title="created on {{image.createdAt}} updated on {{image.updatedAt}}" class="rounded hover thumbnail img-fluid" src="{{image.url}}"img/>
       {{else}}
         {{image.name}}
       {{/if}}
-    <!-- {{> partial}} -->
   </section>
+</div>
+
+{{/each}} -->
+
+{{#each images as |image|}}
+  <div class="col-sm-4">
+    <section data-id="{{image._id}}" style="margin: 10px;">
+        {{#if image.url}}
+          <a data-id={{image._id}} class="get-photo" href="#" data-target="#photo" data-toggle="modal" ><img class="rounded hover thumbnail img-fluid" src="{{image.url}}"img/></a>
+        {{else}}
+          {{image.name}}
+        {{/if}}
+    </section>
+  </div>
 
 {{/each}}
