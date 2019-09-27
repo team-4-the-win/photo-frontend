@@ -7,16 +7,16 @@ const showImagesTemplate = require('../templates/imageUpload-listing.handlebars'
 const onUploadSuccess = function (data) {
   $('.display').html('<img class="img-fluid" src="' + data.fileUpload.url + '">')
   $('#create-files-message').text('File has successfully uploaded')
-  store.file = data.fileUpload
-  console.log(store.file)
 }
 
 // UPON SUCCESSFUL GET IMAGES
 const onGetUploadsSuccess = function (data) { // added data as a parameter
-  console.log(data)
+  const myImages = data.fileUploads.filter(function (image) {
+    return image.user === store.user._id
+  })
   $('#get-files-message').text('Take a look around!')
   // new shit under here
-  const showImagesHtml = showImagesTemplate({ images: data.fileUploads })
+  const showImagesHtml = showImagesTemplate({ images: myImages })
   $('.get-files').html(showImagesHtml)
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
