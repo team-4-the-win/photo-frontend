@@ -69,7 +69,7 @@
             <div id="create-files-message"></div>
             <div class="display"></div>
           </div>
-          <div class="col-3 edit-files-div">
+          <!-- <div class="col-3 edit-files-div">
             <form id="edit-files-form">
             <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
             <br>
@@ -79,7 +79,7 @@
             <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
             </form>
             <div id="edit-files-message"></div>
-          </div>
+          </div> -->
           <div class="col-3 delete-files-div">
             <form id="delete-files-form">
             <input class="form-control" type="text" name="file[file_id]" placeholder="file id" autocomplete="off">
@@ -92,6 +92,47 @@
         <div class="get-files row" id="get-files-here">
         </div>
         <div id="get-files-message"></div>
+
+
+
+
+
+        <!-- update image modal -->
+        <div class="modal" id="updateImageModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Update Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="update-image-div">
+
+                  <form id="edit-files-form">
+                    <input type="hidden" name="file[file_id]" id="imageId" value=""/>
+                    <!-- <input class="form-control" type="hidden" name="file[file_id]" placeholder="file id" autocomplete="off"> -->
+                    <!-- <br> -->
+                    <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
+                    <br>
+                    <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
+                    <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
+                  </form>
+
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
       </div>
     </body>
 </html>

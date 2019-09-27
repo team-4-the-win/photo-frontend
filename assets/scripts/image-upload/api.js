@@ -27,9 +27,9 @@ const getUploads = function () {
 
 // UPDATE AN IMAGE 'PATCH'
 const updateUpload = function (data) {
-  console.log(data.file.name)
+  // console.log(data)
   return $.ajax({
-    url: `${config.apiUrl}/fileUploads/` + store.file._id,
+    url: `${config.apiUrl}/fileUploads/` + data.file.file_id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -44,10 +44,10 @@ const updateUpload = function (data) {
 }
 
 // DELETE AN IMAGE 'DELETE'
-const deleteFile = function (data) {
-  console.log(data)
+const deleteFile = function (id) {
+  // console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/fileUploads/' + store.file._id,
+    url: config.apiUrl + '/fileUploads/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
