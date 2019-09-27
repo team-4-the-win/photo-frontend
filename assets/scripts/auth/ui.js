@@ -3,6 +3,8 @@
 const store = require('../store')
 const imageEvents = require('../image-upload/events')
 
+$('.signed-in-options').hide()
+
 const signUpSuccess = function () {
   $('#sign-up-message').text('Signed up successfully')
   $('form').trigger('reset')
@@ -14,6 +16,8 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
+  store.user = data.user
+  $('#navbarDropdownMenuLink').text(store.user.email)
   $('#sign-in-message').text('Signed in successfully')
   $('#sign-in-div').hide()
   $('#sign-up-div').hide()
