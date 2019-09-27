@@ -19,6 +19,8 @@ $(() => {
   // annonymous function for image id retrieval through handlebars
   $('.get-files').on('click', '.update-button', function () {
     const myImageId = $(this).data('id')
+    console.log(myImageId)
     $('.modal-body #imageId').val(myImageId)
   })
+  $('.get-files').on('click', '.delete-button', imageUploadEvents.onDeleteFile)
 })

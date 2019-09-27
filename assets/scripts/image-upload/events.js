@@ -17,7 +17,7 @@ const onCreateUpload = function (event) {
 
 // SEE ALL FILES (GET)
 const onGetUploads = function (event) {
-  event.preventDefault()
+  // event.preventDefault()
   api.getUploads()
     .then(ui.onGetUploadsSuccess)
     .catch(console.error)
@@ -27,6 +27,7 @@ const onGetUploads = function (event) {
 const onUpdateUpload = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.updateUpload(data)
     .then(ui.onUpdateUploadSuccess)
     .catch(console.error)
@@ -35,10 +36,11 @@ const onUpdateUpload = function (event) {
 // DELETE A FILE
 const onDeleteFile = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
-
-  api.deleteFile(data)
+  const id = $(event.target).data('id')
+  // const data = getFormFields(event.target)
+  console.log(id)
+  // console.log('this is the id:' + id)
+  api.deleteFile(id)
     .then(ui.onDeleteFileSuccess)
     .catch(console.error)
 }
