@@ -5,7 +5,7 @@ const store = require('../store')
 
 // UPLOAD AN IMAGE
 const upload = function (formData) {
-  console.log(formData)
+  // console.log(formData)
   return $.ajax({
     url: `${config.apiUrl}/fileUploads`,
     method: 'POST',
@@ -26,10 +26,10 @@ const getUploads = function () {
 }
 
 // UPDATE AN IMAGE 'PATCH'
-const updateUpload = function (data) {
+const updateUpload = function (data, id) {
   // console.log(data)
   return $.ajax({
-    url: `${config.apiUrl}/fileUploads/` + data.file.file_id,
+    url: `${config.apiUrl}/fileUploads/` + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -45,7 +45,6 @@ const updateUpload = function (data) {
 
 // DELETE AN IMAGE 'DELETE'
 const deleteFile = function (id) {
-  // console.log(data)
   return $.ajax({
     url: config.apiUrl + '/fileUploads/' + id,
     method: 'DELETE',
