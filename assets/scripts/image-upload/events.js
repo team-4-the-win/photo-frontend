@@ -13,7 +13,8 @@ const onCreateUpload = function (event) {
   // console.log(data)
   api.upload(data)
     .then(ui.onUploadSuccess)
-    .catch(console.error)
+    .then(() => onGetUploads(event))
+    .catch(ui.onCreateFailure)
 }
 
 // SEE ALL FILES (GET)
@@ -21,14 +22,14 @@ const onGetUploads = function () {
   // event.preventDefault()
   api.getUploads()
     .then(ui.onGetUploadsSuccess)
-    .catch(console.error)
+    .catch(ui.onFailure)
 }
 
 const onGetBrowse = function (event) {
   // event.preventDefault()
   api.getUploads()
     .then(ui.onGetBrowseSuccess)
-    .catch(console.error)
+    .catch(ui.onFailure)
 }
 
 // UDPATE THE FILE (PATCH)
@@ -38,8 +39,9 @@ const onUpdateUpload = function (event) {
   const id = $(event.target).data('id')
   console.log(id)
   api.updateUpload(data, id)
-    .then(ui.onUpdateUploadSuccess)
-    .catch(console.error)
+    .then(() => onGetUploads(event))
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
 }
 
 // DELETE A FILE
@@ -48,8 +50,9 @@ const onDeleteFile = function (event) {
   const id = $(event.target).data('id')
   console.log('id', id)
   api.deleteFile(id)
-    .then(ui.onDeleteFileSuccess)
-    .catch(console.error)
+    .then(() => onGetUploads(event))
+    .then(ui.onDeleteSuccess)
+    .catch(ui.onDeleteFailure)
 }
 
 // LISTEN FOR EVENTS

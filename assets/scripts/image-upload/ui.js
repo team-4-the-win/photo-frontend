@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const events = require('./events')
+// const events = require('./events')
 const showImagesTemplate = require('../templates/imageUpload-listing.handlebars')
 
 // UPON SUCCESSFUL IMAGE UPLOAD
@@ -37,8 +37,38 @@ const onGetBrowseSuccess = function (data) { // added data as a parameter
   })
 }
 
+const onDeleteSuccess = function () {
+  $('#delete-files-message').text('File has successfully deleted ')
+}
+
+const onUpdateSuccess = function () {
+  $('#update-files-message').text('File has updated successfully ')
+}
+
+const onDeleteFailure = function () {
+  $('#delete-files-message').text('Unable to delete  file. Try again.')
+}
+
+const onUpdateFailure = function () {
+  $('#update-files-message').text('Unable to update  file. Try again.')
+}
+
+const onCreateFailure = function () {
+  $('#create-files-message').text('Unable to create file')
+}
+
+const onFailure = function () {
+  $('#get-files-message').text('Error Occured!')
+}
+
 module.exports = {
   onUploadSuccess,
   onGetUploadsSuccess,
-  onGetBrowseSuccess
+  onGetBrowseSuccess,
+  onDeleteSuccess,
+  onUpdateSuccess,
+  onUpdateFailure,
+  onDeleteFailure,
+  onCreateFailure,
+  onFailure
 }
