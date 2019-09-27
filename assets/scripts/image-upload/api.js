@@ -5,7 +5,7 @@ const store = require('../store')
 
 // UPLOAD AN IMAGE
 const upload = function (formData) {
-  console.log(store.user)
+  console.log(formData)
   return $.ajax({
     url: `${config.apiUrl}/fileUploads`,
     method: 'POST',

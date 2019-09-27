@@ -18,6 +18,9 @@ const onGetUploadsSuccess = function (data) { // added data as a parameter
   // new shit under here
   const showImagesHtml = showImagesTemplate({ images: data.fileUploads })
   $('.get-files').html(showImagesHtml)
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 }
 
 module.exports = {

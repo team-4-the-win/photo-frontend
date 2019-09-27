@@ -1,14 +1,10 @@
 {{#each images as |image|}}
   <section data-id="{{image._id}}" style="margin: 10px;">
       {{#if image.url}}
-        <img class="thumbnail img-fluid" src="{{image.url}}"img/>
+          <img data-toggle="tooltip" data-placement="top" title="created on {{image.createdAt}} updated on {{image.updatedAt}}" class="hover img-thumbnail thumbnail img-fluid" src="{{image.url}}"img/>
       {{else}}
         {{image.name}}
       {{/if}}
-    <div class="image-listing-button text-center">
-      <button class="btn btn-danger delete-button" data-id="{{image._id}}">Delete</button>
-      <button class="btn btn-warning update-button" data-toggle="modal" data-target="#updateImageModal" data-id="{{image._id}}">Update</button>
-    </div>
     <!-- {{> partial}} -->
   </section>
 
