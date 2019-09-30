@@ -48,7 +48,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" data-toggle="modal" data-target="#uploadModal" href="#">upload</a>
+                <a id='upload-link' class="dropdown-item" data-toggle="modal" data-target="#uploadModal" href="#">upload</a>
                 <a class="dropdown-item" data-toggle="modal" data-target="#passwordModal" href="#">change password</a>
                 <hr>
                 <a class="dropdown-item" id="sign-out-button" href="#">sign out</a>
@@ -161,7 +161,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+              <button type="button" class="close-button btn btn-secondary" data-dismiss="modal">close</button>
             </div>
           </div>
         </div>
@@ -189,14 +189,14 @@
                     <input class="form-control" type="text" name="file[name]" placeholder="description" autocomplete="off">
                     <br>
                     <!-- <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off"> -->
-                    <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
+                    <button type="submit" id="edit-files-button" class="close-button btn btn-secondary">edit file</button>
                   </form>
 
                 </div>
               </div>
               <div class="modal-footer">
                 <div id="update-files-message"></div>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                <button type="button" class="close-button btn btn-secondary" data-dismiss="modal">close</button>
               </div>
             </div>
           </div>
@@ -243,7 +243,7 @@
           </div>
           <div class="modal-footer">
             <div id="delete-files-message"></div>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+            <button type="button" class="close-button btn btn-secondary" data-dismiss="modal">close</button>
           </div>
         </div>
       </div>
