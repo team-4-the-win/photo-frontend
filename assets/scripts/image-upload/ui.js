@@ -18,6 +18,7 @@ const onUploadSuccess = function (data) {
 // UPON SUCCESSFUL GET IMAGES
 
 const onGetUploadsSuccess = function (data) { // added data as a parameter
+  $('.get-files').text('')
   const myImages = data.fileUploads.filter(function (image) {
     return image.user === store.user._id
   })
@@ -33,6 +34,7 @@ const onGetUploadsSuccess = function (data) { // added data as a parameter
 }
 
 const onGetBrowseSuccess = function (data) { // added data as a parameter
+  $('.get-files-message').text('')
   const myImages = data.fileUploads.filter(function (image) {
     return image.user !== store.user._id
   })
