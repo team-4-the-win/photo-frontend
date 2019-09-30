@@ -32,6 +32,15 @@ h1 {
 
 $zindex-popover: 1060 !default;
 
+.please-upload-div {
+  color: $green;
+  text-align: center;
+}
+
+.please-upload-div a {
+  color: #fff;
+}
+
 .update {
   z-index: $zindex-popover;
 }

@@ -154,7 +154,7 @@
                 <form id="create-files-form">
                   <input class="form-control" type="file" name="upload" placeholder="your file" autocomplete="off">
                   <br>
-                  <input class="form-control" type="text" name="file[tag]" placeholder="description" autocomplete="off">
+                  <input class="form-control" type="text" name="file[name]" placeholder="description" autocomplete="off">
                 <button type="submit" id="create-files-button" class="btn btn-secondary">create file</button>
                 </form>
                 <div id="create-files-message"></div>
@@ -186,9 +186,9 @@
                     <input type="hidden" name="file[file_id]" id="imageId" value=""/>
                     <!-- <input class="form-control" type="hidden" name="file[file_id]" placeholder="file id" autocomplete="off"> -->
                     <!-- <br> -->
-                    <input class="form-control" type="text" name="file[name]" placeholder="file name" autocomplete="off">
+                    <input class="form-control" type="text" name="file[name]" placeholder="description" autocomplete="off">
                     <br>
-                    <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off">
+                    <!-- <input class="form-control" type="text" name="file[tags]" placeholder="tag" autocomplete="off"> -->
                     <button type="submit" id="edit-files-button" class="btn btn-secondary">edit file</button>
                   </form>
 
@@ -248,8 +248,10 @@
         </div>
       </div>
     </div>
-
-        <div class="get-files row no-gutters" id="get-files-here">
+          <div class="get-files row no-gutters" id="get-files-here">
+        </div>
+        <div class="container">
+          <div class="please-upload-div"></div>
         </div>
       </div>
     </body>
