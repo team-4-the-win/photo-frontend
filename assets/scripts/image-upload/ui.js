@@ -18,16 +18,12 @@ const onGetUploadsSuccess = function (data) { // added data as a parameter
   const myImages = data.fileUploads.filter(function (image) {
     return image.user === store.user._id
   })
-  if (myImages.length === 0) {
-    $('.please-upload-div').html('please <a data-toggle="modal" data-target="#uploadModal" href="#">upload</a> some images, or view the gallery')
-  } else {
-    $('#get-files-message').text('Take a look around!')
-    const showImagesHtml = showImagesTemplate({ images: myImages })
-    $('.get-files').html(showImagesHtml)
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  }
+  $('#get-files-message').text('Take a look around!')
+  const showImagesHtml = showImagesTemplate({ images: myImages })
+  $('.get-files').html(showImagesHtml)
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 }
 
 const onGetBrowseSuccess = function (data) { // added data as a parameter
@@ -41,8 +37,38 @@ const onGetBrowseSuccess = function (data) { // added data as a parameter
   })
 }
 
+const onDeleteSuccess = function () {
+  $('#delete-files-message').text('File has successfully deleted ')
+}
+
+const onUpdateSuccess = function () {
+  $('#update-files-message').text('File has updated successfully ')
+}
+
+const onDeleteFailure = function () {
+  $('#delete-files-message').text('Unable to delete  file. Try again.')
+}
+
+const onUpdateFailure = function () {
+  $('#update-files-message').text('Unable to update  file. Try again.')
+}
+
+const onCreateFailure = function () {
+  $('#create-files-message').text('Unable to create file')
+}
+
+const onFailure = function () {
+  $('#get-files-message').text('Error Occured!')
+}
+
 module.exports = {
   onUploadSuccess,
   onGetUploadsSuccess,
-  onGetBrowseSuccess
+  onGetBrowseSuccess,
+  onDeleteSuccess,
+  onUpdateSuccess,
+  onUpdateFailure,
+  onDeleteFailure,
+  onCreateFailure,
+  onFailure
 }

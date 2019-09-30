@@ -41,7 +41,9 @@ const onUpdateUpload = function (event) {
   api.updateUpload(data, id)
     .then(() => onGetUploads(event))
     .then(ui.onUpdateSuccess)
+    .then($('form').trigger('reset'))
     .catch(ui.onUpdateFailure)
+    .catch($('.update-image-div').text('unable to edit'))
 }
 
 // DELETE A FILE
@@ -52,6 +54,7 @@ const onDeleteFile = function (event) {
   api.deleteFile(id)
     .then(() => onGetUploads(event))
     .then(ui.onDeleteSuccess)
+    .catch($('#delete-files-message').text('unable to delete'))
     .catch(ui.onDeleteFailure)
 }
 

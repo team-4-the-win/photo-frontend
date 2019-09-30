@@ -47,6 +47,10 @@ $zindex-popover: 1060 !default;
 
 .col-sm-4 {
   // max-height: 30em;
+  .user-email {
+    font-size: 12px;
+    font-weight: bold;
+  }
 }
 
 // <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -146,6 +150,7 @@ background-color: black;
   animation-delay: 24s;
   background-image: url('https://i.imgur.com/rPN94xo.jpg');
 }
+
 
 .update {
   z-index: $zindex-popover;
