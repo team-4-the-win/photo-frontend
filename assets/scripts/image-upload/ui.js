@@ -3,7 +3,7 @@
 const store = require('../store')
 // const events = require('./events')
 const showImagesTemplate = require('../templates/imageUpload-listing.handlebars')
-
+const showOtherUserImagesTemplate = require('../templates/otherUserImages-listing.handlebars')
 // UPON SUCCESSFUL IMAGE UPLOAD
 const onUploadSuccess = function (data) {
   $('.display').html('<img class="img-fluid" src="' + data.fileUpload.url + '">')
@@ -36,7 +36,7 @@ const onGetBrowseSuccess = function (data) { // added data as a parameter
   const myImages = data.fileUploads.filter(function (image) {
     return image.user !== store.user._id
   })
-  const showImagesHtml = showImagesTemplate({ images: myImages })
+  const showImagesHtml = showOtherUserImagesTemplate({ images: myImages })
   $('.get-files').html(showImagesHtml)
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
