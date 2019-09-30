@@ -56,6 +56,12 @@ const onDeleteFile = function (event) {
     .catch(ui.onDeleteFailure)
 }
 
+const onCloseButton = function (event) {
+  $('#create-file-message').html('')
+  $('#update-files-message').html('')
+  $('#delete-files-message').html('')
+}
+
 // LISTEN FOR EVENTS
 const addHandlers = function () {
   $('#create-files-form').on('submit', onCreateUpload)
@@ -64,6 +70,7 @@ const addHandlers = function () {
   $('#delete-files-button').on('click', onDeleteFile)
   $('#my-pictures').on('click', onGetUploads)
   $('#browse-pictures').on('click', onGetBrowse)
+  $('.close-button').on('click', onCloseButton)
 }
 
 module.exports = {
