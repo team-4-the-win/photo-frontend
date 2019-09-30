@@ -33,6 +33,7 @@ https://blooming-cliffs-96004.herokuapp.com
 - express
 - mongoDB
 - AWS
+- Pure CSS slideshow https://www.cssscript.com/css-only-crossfading-background-slideshow/
 
 #### Unsolved Problems / Stretch Goal
 - Include themes for users to pick how they'd like to display their images.
