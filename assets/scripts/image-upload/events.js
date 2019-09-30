@@ -37,7 +37,6 @@ const onUpdateUpload = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(event.target).data('id')
-  console.log(id)
   api.updateUpload(data, id)
     .then(() => onGetUploads(event))
     .then(ui.onUpdateSuccess)
@@ -49,7 +48,6 @@ const onUpdateUpload = function (event) {
 const onDeleteFile = function (event) {
   event.preventDefault()
   const id = $(event.target).data('id')
-  console.log('id', id)
   api.deleteFile(id)
     .then(() => onGetUploads(event))
     .then(ui.onDeleteSuccess)
@@ -57,9 +55,10 @@ const onDeleteFile = function (event) {
 }
 
 const onCloseButton = function (event) {
-  $('#create-file-message').html('')
+  $('#create-files-message').html('')
   $('#update-files-message').html('')
   $('#delete-files-message').html('')
+  $('.display').html('')
 }
 
 // LISTEN FOR EVENTS
@@ -71,6 +70,7 @@ const addHandlers = function () {
   $('#my-pictures').on('click', onGetUploads)
   $('#browse-pictures').on('click', onGetBrowse)
   $('.close-button').on('click', onCloseButton)
+  $('#upload-link').on('click', onCloseButton)
 }
 
 module.exports = {
