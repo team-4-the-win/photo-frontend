@@ -15,7 +15,7 @@ const onUploadSuccess = function (data) {
 }
 
 // UPON SUCCESSFUL GET IMAGES
-
+// hi
 const onGetUploadsSuccess = function (data) { // added data as a parameter
   const myImages = data.fileUploads.filter(function (image) {
     return image.user === store.user._id
