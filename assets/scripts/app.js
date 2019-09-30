@@ -17,12 +17,6 @@ $(() => {
   $('#reset-pw-form').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
   // annonymous function for image id retrieval through handlebars
-  // $('.get-files').on('click', '.update-button', function () {
-  //   const myImageId = $(this).data('id')
-  //   console.log(myImageId)
-  //   $('.modal-body #imageId').val(myImageId)
-  // })
-  // $('.get-files').on('click', '.delete-button', imageUploadEvents.onDeleteFile)
   $('.get-files').on('click', '.get-photo', function () {
     const myImageId = $(this).data('id')
     $('#edit-files-form').data('id', myImageId)
