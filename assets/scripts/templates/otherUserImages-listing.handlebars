@@ -1,0 +1,41 @@
+
+
+<!-- {{#each images as |image|}}
+<div class="col-sm-4">
+  <section data-id="{{image._id}}" style="margin: 10px;">
+      {{#if image.url}}
+          <img data-toggle="tooltip" data-placement="top" title="created on {{image.createdAt}} updated on {{image.updatedAt}}" class="rounded hover thumbnail img-fluid" src="{{image.url}}"img/>
+      {{else}}
+        {{image.name}}
+      {{/if}}
+  </section>
+</div>
+
+{{/each}} -->
+{{#each images as |image|}}
+  <div class="col-sm-4">
+    <section data-id="{{image._id}}" style="margin: 10px;">
+        {{#if image.url}}
+          <a data-id={{image._id}} title="{{image.name}} &#10; filename is {{image.url}} &#10; uploaded by user {{image.user}} &#10; created at {{image.createdAt}}  &#10; updated at {{image.updatedAt}}" class="get-photo" href="#" data-target="#photo" ><img class="rounded hover thumbnail img-fluid" src="{{image.url}}"img/></a>
+        {{else}}
+          {{image.name}}
+        {{/if}}
+        <div class="user-email" style="color: white">{{image.user.email}} </div>
+    </section>
+  </div>
+
+{{/each}}
+
+
+<!-- {{#each images as |image|}}
+  <div class="col-sm-4">
+    <section data-id="{{image._id}}" style="margin: 10px;">
+        {{#if image.url}}
+          <a data-id={{image._id}} title="{{image.name}} &#10; created at {{image.createdAt}} &#10; updated at {{image.updatedAt}}" class="get-photo" href="#" data-target="#photo" data-toggle="modal" ><img class="rounded hover thumbnail img-fluid" src="{{image.url}}"img/></a>
+        {{else}}
+          {{image.name}}
+        {{/if}}
+    </section>
+  </div>
+
+{{/each}} -->
