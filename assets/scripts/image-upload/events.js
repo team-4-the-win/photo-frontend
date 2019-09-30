@@ -8,7 +8,7 @@ const ui = require('./ui')
 // CREATE AN UPLOAD
 const onCreateUpload = function (event) {
   event.preventDefault()
-  $('.display').html('<img class="img-fluid" src="https://i.imgur.com/rPpsBno.gif">')
+  $('.display').html('<img class="img-fluid" src="../../../public/Spinner-1s-85px.gif">')
   const data = new FormData(event.target)
   // console.log(data)
   api.upload(data)

@@ -51,8 +51,6 @@ const signOutSuccess = function () {
   $('.signed-out-options').show()
   $('#sign-in-div').show()
   $('#sign-up-div').show()
-  $('.get-files').text('')
-  $('.get-files-message').text('')
 }
 
 const signOutFailure = function () {

@@ -32,9 +32,13 @@ h1 {
 
 $zindex-popover: 1060 !default;
 
-.get-files-message {
+.please-upload-div {
   color: $green;
   text-align: center;
+}
+
+.please-upload-div a {
+  color: #fff;
 }
 
 .update {
