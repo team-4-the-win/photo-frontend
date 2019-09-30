@@ -10,6 +10,7 @@ const onUploadSuccess = function (data) {
   $('#create-files-message').text('File has successfully uploaded')
   store.file = data.fileUpload
   $('.get-files-message').text('')
+  $('form').trigger('reset')
   // onGetUploadsSuccess()
   // console.log(store.file)
 }
