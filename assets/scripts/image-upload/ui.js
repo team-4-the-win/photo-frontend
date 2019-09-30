@@ -16,7 +16,7 @@ const onUploadSuccess = function (data) {
 // UPON SUCCESSFUL GET IMAGES
 const onGetUploadsSuccess = function (data) { // added data as a parameter
   const myImages = data.fileUploads.filter(function (image) {
-    return image.user === store.user._id
+    return image.user._id === store.user._id
   })
   if (myImages.length === 0) {
     $('.please-upload-div').html('please <a data-toggle="modal" data-target="#uploadModal" href="#">upload</a> some images, or view the gallery')
